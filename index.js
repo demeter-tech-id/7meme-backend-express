@@ -43,6 +43,7 @@ express()
         }
         userDB.getPosts(offset, limit, posts => {
             if (posts) {
+                res.setHeader('Access-Control-Allow-Origin', '*');
                 res.json(posts);
             } else {
                 res.status(500);
